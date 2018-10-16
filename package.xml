@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tf_manipulator</name>
+  <version>0.1.0</version>
+  <description>Subscribe, manipulate and publish transformations. </description>
+  <license> doesntmatter </license>
+  <maintainer email="rdeuber@student.ethz.ch">Robin Deuber</maintainer>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <!--<depend>eigen</depend>-->
+  <!--<depend>boost</depend>-->
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>tf2_msgs</depend>
+</package>

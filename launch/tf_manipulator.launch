@@ -1,0 +1,8 @@
+<launch>
+
+  <!-- Launch ROS Package Template Node -->
+  <node pkg="tf_manipulator" type="tf_manipulator" name="tf_manipulator" output="screen">
+    <rosparam command="load" file="$(find tf_manipulator)/config/default.yaml" />
+  </node>
+
+</launch>
