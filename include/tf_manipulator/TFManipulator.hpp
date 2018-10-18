@@ -40,18 +40,26 @@ class TFManipulator
    */
   void topicCallback(const tf2_msgs::TFMessage& message);
 
+  /*!
+   * ROS topic callback method.
+   * @param message the received message.
+   */
+  void topicCallbackStatic(const tf2_msgs::TFMessage& message);
 
   //! ROS node handle.
   ros::NodeHandle& nodeHandle_;
 
-  //! ROS topic subscriber.
+  //! ROS topic subscribers.
   ros::Subscriber subscriber_;
+  ros::Subscriber subscriberStatic_;
 
   //! ROS topic publisher.
   ros::Publisher publisher_;
+  ros::Publisher publisherStatic_;
 
-  //! ROS topic name to subscribe to.
+  //! ROS topic names to subscribe to.
   std::string subscriberTopic_;
+  std::string subscriberTopicStatic_;
 
   //! Algorithm computation object.
   Algorithm algorithm_;
