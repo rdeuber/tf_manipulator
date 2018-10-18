@@ -6,6 +6,8 @@
 #include <ros/ros.h>
 #include <sensor_msgs/Temperature.h>
 #include <tf2_msgs/TFMessage.h>
+#include <tf2_ros/transform_broadcaster.h>
+#include <tf2_ros/static_transform_broadcaster.h>
 #include <std_srvs/Trigger.h>
 
 namespace tf_manipulator {
@@ -55,7 +57,7 @@ class TFManipulator
 
   //! ROS topic publisher.
   ros::Publisher publisher_;
-  ros::Publisher publisherStatic_;
+  tf2_ros::StaticTransformBroadcaster static_broadcaster_;
 
   //! ROS topic names to subscribe to.
   std::string subscriberTopic_;

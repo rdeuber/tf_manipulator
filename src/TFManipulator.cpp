@@ -18,7 +18,6 @@ TFManipulator::TFManipulator(ros::NodeHandle& nodeHandle)
                                             &TFManipulator::topicCallbackStatic, this);
 
   publisher_ = nodeHandle_.advertise<tf2_msgs::TFMessage>("/tf", 100);
-  publisherStatic_ = nodeHandle_.advertise<tf2_msgs::TFMessage>("/tf_static", 100);
   
   ROS_INFO("Successfully launched node.");
 }
@@ -42,8 +41,8 @@ void TFManipulator::topicCallback(const tf2_msgs::TFMessage& message)
 
 void TFManipulator::topicCallbackStatic(const tf2_msgs::TFMessage& message)
 {
-  algorithm_.processData(3);
-  publisherStatic_.publish(message);
+  //std::vector<geometry_msgs::TransformStamped> vector (message.transforms, message.transforms + sizeof(message.transforms)/ sizeof(message.transforms[0]));
+  static_broadcaster_.sendTransform(message.transforms);
   ROS_INFO("rdeuber: Static Message published");
 }
 
